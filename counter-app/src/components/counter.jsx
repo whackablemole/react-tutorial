@@ -12,7 +12,7 @@ class Counter extends Component {
 
   // Arrow functions automatically inherit "this" from the component
   handleIncrement = () => {
-    console.log("Increment clicked", this);
+    this.setState({ count: this.state.count + 1 });
   };
 
   render() {
