@@ -5,9 +5,15 @@ class Counter extends Component {
     count: 0,
   };
 
-  handleIncrement() {
-    console.log("Increment clicked", this.state.count);
-  }
+  //   constructor() {
+  //     super();
+  //     this.handleIncrement = this.handleIncrement.bind(this);
+  //   }
+
+  // Arrow functions automatically inherit "this" from the component
+  handleIncrement = () => {
+    console.log("Increment clicked", this);
+  };
 
   render() {
     return (
