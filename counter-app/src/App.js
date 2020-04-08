@@ -14,10 +14,15 @@ class App extends Component {
     ],
   };
 
-  constructor(props) {
-    super(props); // Props must be passed as an argument otherwise props cannot be used - they don't exist yet
+  // Lifecycle hook - Called before a component is loaded into the DOM
+  constructor() {
+    super();
     console.log("App - Constructor");
-    //this.state = this.props.something; // EXAMPLE - the constructor is the only place the state can be set directly
+  }
+
+  // Lifecycle hook - Called directly after a component is loaded into the DOM
+  componentDidMount() {
+    console.log("App Mounted");
   }
 
   handleIncrement = (counter) => {
@@ -41,7 +46,9 @@ class App extends Component {
     this.setState({ counters }); // Key and valu are the same so "counters: counters" is not necessary
   };
 
+  // Render() is a lifecycle hook
   render() {
+    console.log("App Rendered");
     return (
       <React.Fragment>
         <NavBar
