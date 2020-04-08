@@ -14,6 +14,12 @@ class App extends Component {
     ],
   };
 
+  constructor(props) {
+    super(props); // Props must be passed as an argument otherwise props cannot be used - they don't exist yet
+    console.log("App - Constructor");
+    //this.state = this.props.something; // EXAMPLE - the constructor is the only place the state can be set directly
+  }
+
   handleIncrement = (counter) => {
     const counters = [...this.state.counters];
     const index = counters.indexOf(counter);
